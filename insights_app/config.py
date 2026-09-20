@@ -18,7 +18,8 @@ class Config:
 
     @classmethod
     def from_env(cls) -> "Config":
-        base_dir = Path(os.environ.get("INSIGHTS_DATA_DIR", "instance")).resolve()
+        default_data_dir = "/tmp/insights" if os.environ.get("VERCEL") else "instance"
+        base_dir = Path(os.environ.get("INSIGHTS_DATA_DIR", default_data_dir)).resolve()
         secret_key = os.environ.get("SECRET_KEY", "")
         admin_password_hash = os.environ.get("ADMIN_PASSWORD_HASH", "")
         return cls(
