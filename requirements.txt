@@ -1,0 +1,4 @@
+pdfplumber>=0.11,<0.12
+pypdf>=6,<7
+reportlab>=4,<5
+gunicorn>=23,<24
