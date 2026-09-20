@@ -94,11 +94,11 @@ The app exposes a WSGI callable at `wsgi:application` and includes:
 - `Procfile` for platforms that run Gunicorn.
 - `Dockerfile` for container deployment.
 - `runtime.txt` for Python platform selection.
-- `vercel.json` and `pyproject.toml` for Vercel Python deployments.
+- `vercel.json` and `api/index.py` for Vercel Python deployments.
 
 ### Vercel
 
-When importing into Vercel, use the repository root as the Root Directory and do not select Next.js. The committed `vercel.json` sets the framework to Python, and `pyproject.toml` points Vercel at `wsgi:app`.
+When importing into Vercel, use the repository root as the Root Directory and choose **Other** as the framework if Vercel asks. The committed `vercel.json` sets the framework to `null`, which means "Other", and rewrites all traffic to the Python WSGI app exposed from `api/index.py`.
 
 Set these Vercel Environment Variables before deploying:
 

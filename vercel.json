@@ -1,9 +1,15 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "framework": "python",
+  "framework": null,
   "functions": {
-    "wsgi.py": {
-      "excludeFiles": "{tests/**,**/__pycache__/**,__pycache__/**,instance/**,.git/**}"
+    "api/index.py": {
+      "includeFiles": "{insights_app/**,migrations/**}"
     }
-  }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/api/index"
+    }
+  ]
 }
