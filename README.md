@@ -94,11 +94,11 @@ The app exposes a WSGI callable at `wsgi:application` and includes:
 - `Procfile` for platforms that run Gunicorn.
 - `Dockerfile` for container deployment.
 - `.python-version` for Python platform selection.
-- `app.py`, `vercel.json`, and `api/index.py` for Vercel Python deployments.
+- `app.py` for Vercel Flask/Python auto-detection.
 
 ### Vercel
 
-When importing into Vercel, use the repository root as the Root Directory. Vercel should auto-detect Flask from the top-level `app.py`; if it asks for a framework, choose Flask/Python, or Other if Flask is not offered. The committed `vercel.json` rewrites all traffic to the Flask wrapper, which passes requests into the Insights app.
+When importing into Vercel, use the repository root as the Root Directory. Vercel should auto-detect Flask from the top-level `app.py`; if it asks for a framework, choose Flask/Python, or Other if Flask is not offered.
 
 Set these Vercel Environment Variables before deploying:
 
