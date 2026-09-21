@@ -93,7 +93,7 @@ The app exposes a WSGI callable at `wsgi:application` and includes:
 
 - `Procfile` for platforms that run Gunicorn.
 - `Dockerfile` for container deployment.
-- `runtime.txt` for Python platform selection.
+- `.python-version` for Python platform selection.
 - `app.py`, `vercel.json`, and `api/index.py` for Vercel Python deployments.
 
 ### Vercel

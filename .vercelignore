@@ -1,0 +1,11 @@
+.git
+__pycache__
+*.pyc
+.env
+.venv
+instance
+tests
+outputs
+work
+Dockerfile
+Procfile
