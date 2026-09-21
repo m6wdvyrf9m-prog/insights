@@ -95,10 +95,13 @@ The app exposes a WSGI callable at `wsgi:application` and includes:
 - `Dockerfile` for container deployment.
 - `.python-version` for Python platform selection.
 - `app.py` for Vercel Flask/Python auto-detection.
+- `index.html` and `api/ping.py` as Vercel deployment diagnostics.
 
 ### Vercel
 
 When importing into Vercel, use the repository root as the Root Directory. Vercel should auto-detect Flask from the top-level `app.py`; if it asks for a framework, choose Flask/Python, or Other if Flask is not offered.
+
+If Vercel serves a 404, first test `/` and `/api/ping`. If both 404, Vercel is deploying the wrong root, branch, or project.
 
 Set these Vercel Environment Variables before deploying:
 
